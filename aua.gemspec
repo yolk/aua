@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Sebastian Munz"]
   s.email       = ["sebastian@yo.lk"]
   s.homepage    = "http://rubygems.org/gems/aua"
-  s.summary     = %q{aua is a user agent parser with high aims.}
-  s.description = %q{aua is a user agent parser with high aims.}
+  s.summary     = %q{aua = a user agent (parser).}
+  s.description = %q{aua = a user agent (parser).}
 
   s.rubyforge_project = "aua"
 
