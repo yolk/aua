@@ -3,10 +3,14 @@ module Aua::Agents::ApiClients
   
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
-    agent.raw =~ /^Yahoo Pipes ([\d\.]+)$/ ||
-    agent.app =~ /^Systemeinstellungen/ ||
-    agent.app =~ /^SystemUIServer/
+    agent.raw =~ PATTERN_YAHOO_PIPES ||
+    agent.app =~ PATTERN_GERMAN_SYSTEM_PREFS ||
+    agent.app =~ PATTERN_SYSTEM_UI_SEVER
   end
+  
+  PATTERN_YAHOO_PIPES         = /^Yahoo Pipes ([\d\.]+)$/
+  PATTERN_GERMAN_SYSTEM_PREFS = /^Systemeinstellungen/
+  PATTERN_SYSTEM_UI_SEVER     = /^SystemUIServer/
   
   def type
     :ApiClient
@@ -14,15 +18,15 @@ module Aua::Agents::ApiClients
   
   def name
     @name ||= begin
-      if raw =~ /^Yahoo Pipes ([\d\.]+)$/
+      if raw =~ PATTERN_YAHOO_PIPES
         :YahooPipes
       elsif app == "PEAR"
         :PearPHP
       elsif app == "NativeHost"
         :CappucinosNativeHost
-      elsif app =~ /^Systemeinstellungen/
+      elsif app =~ PATTERN_GERMAN_SYSTEM_PREFS
         :SystemPreferences
-      elsif app =~ /^SystemUIServer/
+      elsif app =~ PATTERN_SYSTEM_UI_SEVER
         :SystemUIServer
       elsif app == "Twisted"
         :PythonTwistedPageGetter
