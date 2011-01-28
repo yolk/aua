@@ -1,6 +1,10 @@
 ### dev
 
-[full changelog](http://github.com/yolk/aua/compare/v0.1.0...master)
+[full changelog](http://github.com/yolk/aua/compare/v0.1.1...master)
+
+### 0.1.1 / 2011-01-28
+
+[full changelog](http://github.com/yolk/aua/compare/v0.1.0...v0.1.1)
 
 * Added type :Unknown and output raw user agent string on Aua#name on unknown strings
 
