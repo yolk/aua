@@ -317,8 +317,8 @@ describe Aua do
         { :type => :ApiClient, :name => :PythonTwistedPageGetter, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       
       # Others
-      "1PasswordThumbs/1 CFNetwork/454.11.5 Darwin/10.6.0 (i386) (MacBookPro4%2C1)" =>
-        { :type => :Others, :name => :"1PasswordThumbs", :version => "1", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
+      "1PasswordThumbs/1 CFNetwork/454.11.5 Darwin/10.0.0 (i386) (MacBookPro4%2C1)" =>
+        { :type => :Others, :name => :"1PasswordThumbs", :version => "1", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; Intel Mac OS X) Word/12.25.0" =>
         { :type => :Others, :name => :MSWord, :version => "12.25.0", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Microsoft Office/14.0 (Windows NT 6.1; Microsoft Outlook 14.0.5128; Pro; ms-office; MSOffice 14)" =>
@@ -343,8 +343,8 @@ describe Aua do
         { :type => :FeedReader, :name => :Vienna, :version => "2.5.0.2501", :os_name => nil, :os_version => nil, :platform => nil },
       "NewsGatorOnline/2.0 (http://www.newsgator.com; 1 subscribers)" =>
         { :type => :FeedReader, :name => :NewsGatorOnline, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil },
-      "NewsFire/84 CFNetwork/454.11.5 Darwin/10.6.0 (i386) (iMac11%2C3)" =>
-        { :type => :FeedReader, :name => :NewsFire, :version => "84", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
+      "NewsFire/84 CFNetwork/454.11.5 Darwin/10.4.1 (i386) (iMac11%2C3)" =>
+        { :type => :FeedReader, :name => :NewsFire, :version => "84", :os_name => :MacOSX, :os_version => "10.6.4", :platform => :Macintosh },
       "NetNewsWire/3.2b24 (Mac OS X; http://www.newsgator.com/Individuals/NetNewsWire/)" =>
         { :type => :FeedReader, :name => :NetNewsWire, :version => "3.2b24", :os_name => nil, :os_version => nil, :platform => nil },
       "MWFeedParser" =>
