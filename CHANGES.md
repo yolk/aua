@@ -3,6 +3,7 @@
 [full changelog](http://github.com/yolk/aua/compare/v0.1.2...master)
 
 * Some Darwin build number additions
+* Added Zend_Http_Client as ApiClient
 
 ### 0.1.2 / 2011-01-28
 

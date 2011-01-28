@@ -291,6 +291,8 @@ describe Aua do
         { :type => :ApiClient, :name => :YahooPipes, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Zendesk" =>
         { :type => :ApiClient, :name => :Zendesk, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+      "Zend_Http_Client" =>
+        { :type => :ApiClient, :name => :Zend_Http_Client, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "Python-urllib/2.6" =>
         { :type => :ApiClient, :name => :"Python-urllib", :version => "2.6", :os_name => nil, :os_version => nil, :platform => nil },
       "Ruby" =>

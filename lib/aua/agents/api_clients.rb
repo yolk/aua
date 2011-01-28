@@ -1,5 +1,5 @@
 module Aua::Agents::ApiClients
-  KNOWN_CLIENTS = %w(curl Zendesk Python-urllib Ruby PEAR NativeHost Java AppEngine-Google Twisted)
+  KNOWN_CLIENTS = %w(curl Zend_Http_Client Zendesk Python-urllib Ruby PEAR NativeHost Java AppEngine-Google Twisted)
   
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
