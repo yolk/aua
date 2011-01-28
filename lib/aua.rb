@@ -26,7 +26,15 @@ class Aua
     Aua::OperatingSystems.extend_agent(self)
   end
 
-  attr_reader :type, :name, :version, :os_name, :os_version, :parts, :raw, :platform
+  attr_reader :version, :os_name, :os_version, :parts, :raw, :platform
+  
+  def name
+    unknown? ? raw : @name
+  end
+  
+  def type
+    @type || :Unknown
+  end
   
   def products
     @products ||= parts.map{|p| p[0] }
@@ -74,7 +82,7 @@ class Aua
   end
   
   def unknown?
-    !name.is_a?(Symbol)
+    type == :Unknown
   end
   
   def to_s

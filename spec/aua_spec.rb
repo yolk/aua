@@ -421,8 +421,8 @@ describe Aua do
     its(:os_string) { should eql(nil) }
     its(:platform_string)    { should eql(nil) }
     
-    its(:name)        { should eql(nil) }
-    its(:type)        { should eql(nil) }
+    its(:name)        { should eql("") }
+    its(:type)        { should eql(:Unknown) }
     its(:version)     { should eql(nil) }
     its(:os_name)     { should eql(nil) }
     its(:os_version)  { should eql(nil) }
@@ -470,5 +470,12 @@ describe Aua do
     
     it{ should be_unknown }
     its(:to_s) { should eql("Unknown: Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13")}
+    
+    its(:name)        { should eql("Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13") }
+    its(:type)        { should eql(:Unknown) }
+    its(:version)     { should eql(nil) }
+    its(:os_name)     { should eql(nil) }
+    its(:os_version)  { should eql(nil) }
+    its(:platform)    { should eql(nil) }
   end
 end
