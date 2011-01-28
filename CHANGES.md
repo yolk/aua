@@ -2,6 +2,8 @@
 
 [full changelog](http://github.com/yolk/aua/compare/v0.1.3...master)
 
+* Added Aua#major_version and Aua#os_major_version
+
 ### 0.1.3 / 2011-01-28
 
 [full changelog](http://github.com/yolk/aua/compare/v0.1.2...v0.1.3)

@@ -44,51 +44,51 @@ describe Aua do
     EXAMPLES = {
       # Firefox
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13" => 
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :MacOSX, :os_version => "10.6", :os_major_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.11) Gecko/20101012 Firefox/3.6.11 " =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.11", :os_name => :Windows, :os_version => "Vista", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.11", :major_version => "3.6", :os_name => :Windows, :os_version => "Vista", :os_major_version => "Vista", :platform => :Windows },
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; de; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.2", :os_name => :Windows, :os_version => "7", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.2", :major_version => "3.6", :os_name => :Windows, :os_version => "7", :os_major_version => "7", :platform => :Windows },
       "Mozilla/5.0 (Windows; U; Windows NT 6.0; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13 (.NET CLR 3.5.30729)" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :Windows, :os_version => "Vista", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :Windows, :os_version => "Vista", :platform => :Windows },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9) Gecko/2008061004 Firefox/3.0" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.0", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
+        { :type => :Browser, :name => :Firefox, :version => "3.0", :major_version => "3.0", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.5; en-US; rv:1.9.0.3) Gecko/2008092414 Firefox/3.0.3" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.0.3", :os_name => :MacOSX, :os_version => "10.5", :platform => :Macintosh },
+        { :type => :Browser, :name => :Firefox, :version => "3.0.3", :major_version => "3.0", :os_name => :MacOSX, :os_version => "10.5", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0b9) Gecko/20100101 Firefox/4.0b9" =>
-        { :type => :Browser, :name => :Firefox, :version => "4.0b9", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
+        { :type => :Browser, :name => :Firefox, :version => "4.0b9", :major_version => "4.0b", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Win 9x 4.90; en-US; rv:1.8.0.3) Gecko/20060426 Firefox/1.5.0.3" =>
-        { :type => :Browser, :name => :Firefox, :version => "1.5.0.3", :os_name => :Windows, :os_version => "ME", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "1.5.0.3", :major_version => "1.5", :os_name => :Windows, :os_version => "ME", :platform => :Windows },
       "Mozilla/5.0 (Windows; U; Win98; de-DE; rv:1.7) Gecko/20040803 Firefox/0.9.3" =>
-        { :type => :Browser, :name => :Firefox, :version => "0.9.3", :os_name => :Windows, :os_version => "98", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "0.9.3", :major_version => "0.9", :os_name => :Windows, :os_version => "98", :platform => :Windows },
       "Mozilla/5.0 (X11; U; OpenBSD i386; en-US; rv:1.8.1.7) Gecko/20070930 Firefox/2.0.0.7" =>
-        { :type => :Browser, :name => :Firefox, :version => "2.0.0.7", :os_name => :Linux, :os_version => "OpenBSD", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "2.0.0.7", :major_version => "2.0", :os_name => :Linux, :os_version => "OpenBSD", :os_major_version => "OpenBSD", :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.2.13) Gecko/20101206 Ubuntu/10.04 (lucid) Firefox/3.6.13 (.NET CLR 3.5.30729)" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101206 Red Hat/3.6-2.el5 Firefox/3.6.13" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :Linux, :os_version => "Red Hat", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :Linux, :os_version => "Red Hat", :os_major_version => "Red Hat", :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux x86_64; es-ES; rv:1.9.0.12) Gecko/2009072711 CentOS/3.0.12-1.el5.centos Firefox/3.0.12" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.0.12", :os_name => :Linux, :os_version => "CentOS", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "3.0.12", :major_version => "3.0", :os_name => :Linux, :os_version => "CentOS", :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.9) Gecko/20100915 Gentoo Firefox/3.6.9"  =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.9", :os_name => :Linux, :os_version => "Gentoo", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.9", :major_version => "3.6", :os_name => :Linux, :os_version => "Gentoo", :platform => :X11 },
       "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.13) Gecko/20101203 YFF35 Firefox/3.6.13 GTB7.1 (.NET CLR 3.5.30729)" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.2.13) Gecko/20101203 SUSE/3.6.13-0.2.1 Firefox/3.6.13" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :os_name => :Linux, :os_version => "SUSE", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :Linux, :os_version => "SUSE", :platform => :X11 },
       "Mozilla/5.0 (X11; Linux x86_64; rv:2.0b10pre) Gecko/20110120 Firefox-4.0/4.0b10pre" =>
-        { :type => :Browser, :name => :Firefox, :version => "4.0b10pre", :os_name => :Linux, :os_version => nil, :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "4.0b10pre", :major_version => "4.0b", :os_name => :Linux, :os_version => nil, :os_major_version => nil, :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.14pre) Gecko/20110113 Ubuntu/9.10 (karmic) Namoroka/3.6.14pre" =>
-        { :type => :Browser, :name => :Firefox, :version => "3.6.14pre", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
+        { :type => :Browser, :name => :Firefox, :version => "3.6.14pre", :major_version => "3.6", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
       
       # Firefox/Mozilla based
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9a9pre) Gecko/2007110108 prism/0.8" =>
-        { :type => :Browser, :name => :Prism, :version => "0.8", :os_name => :Windows, :os_version => "7", :platform => :Windows },
+        { :type => :Browser, :name => :Prism, :version => "0.8", :major_version => "0.8", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2pre) Gecko/20100322 Prism/1.0b4" =>
-        { :type => :Browser, :name => :Prism, :version => "1.0b4", :os_name => :Windows, :os_version => "7", :platform => :Windows },
+        { :type => :Browser, :name => :Prism, :version => "1.0b4", :major_version => "1.0b", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1.15) Gecko/20101027 SeaMonkey/2.0.10" =>
-        { :type => :Browser, :name => :SeaMonkey, :version => "2.0.10", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
+        { :type => :Browser, :name => :SeaMonkey, :version => "2.0.10", :major_version => "2.0", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en; rv:1.9.0.19) Gecko/2010111021 Camino/2.0.6 (like Firefox/3.0.19)" =>
         { :type => :Browser, :name => :Camino, :version => "2.0.6", :os_name => :MacOSX, :os_version => "10.5", :platform => :Macintosh },
       "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.16) Gecko/20110107 Iceweasel/3.5.16 (like Firefox/3.5.16)" =>
@@ -98,7 +98,7 @@ describe Aua do
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; de; rv:1.9.2.13) Gecko/20101207 Lightning/1.0b2 Thunderbird/3.1.7" =>
         { :type => :Browser, :name => :Thunderbird, :version => "3.1.7", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Mozilla/5.0 (X11; U; Linux x86_64; en; rv:1.9.0.8) Gecko/20080528 Fedora/2.24.3-4.fc10 Epiphany/2.22 Firefox/3.0" =>
-        { :type => :Browser, :name => :Epiphany, :version => "2.22", :os_name => :Linux, :os_version => "Fedora", :platform => :X11 },
+        { :type => :Browser, :name => :Epiphany, :version => "2.22", :major_version => "2.22", :os_name => :Linux, :os_version => "Fedora", :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux x86_64; en; rv:1.8.1.13) Gecko/20080326 (Debian-1.8.1.13-1) Epiphany/2.20" =>
         { :type => :Browser, :name => :Epiphany, :version => "2.20", :os_name => :Linux, :os_version => "Debian", :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008100716 Firefox/3.0.3 Flock/2.0" =>
@@ -110,9 +110,9 @@ describe Aua do
       
       # Safari
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; de-de) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.2 Safari/533.18.5" =>
-        { :type => :Browser, :name => :Safari, :version => "5.0.2", :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
+        { :type => :Browser, :name => :Safari, :version => "5.0.2", :os_name => :MacOSX, :os_version => "10.5.8", :os_major_version => "10.5", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-us) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4" =>
-        { :type => :Browser, :name => :Safari, :version => "5.0.3", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
+        { :type => :Browser, :name => :Safari, :version => "5.0.3", :os_name => :MacOSX, :os_version => "10.6.6", :os_major_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; de-de) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10" =>
         { :type => :Browser, :name => :Safari, :version => "4.0.4", :os_name => :MacOSX, :os_version => "10.6.2", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10" => 
@@ -128,7 +128,7 @@ describe Aua do
       "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; es) AppleWebKit/85 (KHTML, like Gecko) Safari/85" =>
         { :type => :Browser, :name => :Safari, :version => "1.0", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Safari/6533.19.4 CFNetwork/454.11.5 Darwin/10.6.0 (i386) (iMac8%2C1)" =>
-        { :type => :Browser, :name => :Safari, :version => "6533.19.4", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
+        { :type => :Browser, :name => :Safari, :version => "6533.19.4", :major_version => "6533.19", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
         
       # Safari based
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; de-de) AppleWebKit/533.18.1 (KHTML, like Gecko) Fluid/0.9.6 Safari/533.18.1" =>
@@ -136,7 +136,7 @@ describe Aua do
       "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_5_8; de-de) AppleWebKit/533.17.8 (KHTML, like Gecko) Fluid/0.9.6 Safari/533.17.8" =>
         { :type => :Browser, :name => :Fluid, :version => "0.9.6", :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US) AppleWebKit/525.18 (KHTML, like Gecko, Safari/525.20) OmniWeb/v622.4.0.109283" =>
-        { :type => :Browser, :name => :OmniWeb, :version => "v622.4.0.109283", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
+        { :type => :Browser, :name => :OmniWeb, :version => "v622.4.0.109283", :major_version => "v622.4.0.109283", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "MobileSafari/6531.22.7 CFNetwork/485.2 Darwin/10.3.1" =>
         { :type => :Browser, :name => :MobileSafari, :version => "6531.22.7", :os_name => :Darwin, :os_version => "10.3.1", :platform => :Darwin },
       "Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Epiphany/2.30.6 Safari/534.7" =>
@@ -154,7 +154,7 @@ describe Aua do
         
       # Chrome
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.638.0 Safari/534.16" =>
-        { :type => :Browser, :name => :Chrome, :version => "10.0.638.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
+        { :type => :Browser, :name => :Chrome, :version => "10.0.638.0", :major_version => "10.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.15 (KHTML, like Gecko) Ubuntu/10.10 Chromium/10.0.613.0 Chrome/10.0.613.0 Safari/534.15" =>
         { :type => :Browser, :name => :Chrome, :version => "10.0.613.0", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.552.231 Safari/534.10" =>
@@ -190,7 +190,7 @@ describe Aua do
       "Opera/8.5 (Macintosh; PPC Mac OS X; U; en)" => 
         { :type => :Browser, :name => :Opera, :version => "8.5", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Opera/8.01 (Windows NT 5.1)" =>
-        { :type => :Browser, :name => :Opera, :version => "8.01", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
+        { :type => :Browser, :name => :Opera, :version => "8.01", :major_version => "8.01", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/5.0 (Windows NT 5.1; U; en) Opera 8.01" =>
         { :type => :Browser, :name => :Opera, :version => "8.01", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/4.0 (compatible; MSIE 5.0; Windows 95) Opera 6.01 [en]" =>
@@ -250,7 +250,7 @@ describe Aua do
         { :type => :Browser, :name => :MobileSafari, :version => "3.0", :os_name => :iOS, :os_version => nil, :platform => :iPod },
         
       "Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; es-es) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405" =>
-        { :type => :Browser, :name => :MobileSafari, :version => "7B405", :os_name => :iOS, :os_version => "3.2.1", :platform => :iPad },
+        { :type => :Browser, :name => :MobileSafari, :version => "7B405", :major_version => "7B405", :os_name => :iOS, :os_version => "3.2.1", :platform => :iPad },
       "Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; es-es) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B405 Safari/531.21.10" =>
         { :type => :Browser, :name => :MobileSafari, :version => "4.0.4", :os_name => :iOS, :os_version => "3.2.1", :platform => :iPad },
       "Mozilla/5.0 (iPad; U; CPU OS 4_2_1 like Mac OS X; de-de) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5" =>
@@ -302,9 +302,9 @@ describe Aua do
       "NativeHost" =>
         { :type => :ApiClient, :name => :CappucinosNativeHost, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "Java/1.6.0_20" =>
-        { :type => :ApiClient, :name => :Java, :version => "1.6.0_20", :os_name => nil, :os_version => nil, :platform => nil },
+        { :type => :ApiClient, :name => :Java, :version => "1.6.0_20", :major_version => "1.6", :os_name => nil, :os_version => nil, :platform => nil },
       "Systemeinstellungen5.2 CFNetwork/438.16 Darwin/9.8.0 (i386) (MacBookPro5%2C5)" =>
-        { :type => :ApiClient, :name => :SystemPreferences, :version => nil, :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
+        { :type => :ApiClient, :name => :SystemPreferences, :version => nil, :major_version => nil, :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
       "Systemeinstellungen/7.0 CFNetwork/454.11.5 Darwin/10.6.0 (i386) (iMac8%2C1)" =>
         { :type => :ApiClient, :name => :SystemPreferences, :version => "7.0", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
       "SystemUIServer248.9 CFNetwork/438.16 Darwin/9.8.0 (i386) (iMac8%2C1)" =>
@@ -328,9 +328,9 @@ describe Aua do
         
       # HttpCheckers
       "check_http/v2053 (nagios-plugins 1.4.13)" =>
-        { :type => :HttpChecker, :name => :Nagios, :version => "v2053", :os_name => nil, :os_version => nil, :platform => nil },
+        { :type => :HttpChecker, :name => :Nagios, :version => "v2053", :major_version => "v2053", :os_name => nil, :os_version => nil, :platform => nil },
       "Pingdom.com_bot_version_1.4_(http://www.pingdom.com/)" =>
-        { :type => :HttpChecker, :name => :PingdomBot, :version => "1.4", :os_name => nil, :os_version => nil, :platform => nil },
+        { :type => :HttpChecker, :name => :PingdomBot, :version => "1.4", :major_version => "1.4", :os_name => nil, :os_version => nil, :platform => nil },
       "NewRelicPinger/1.0" =>
         { :type => :HttpChecker, :name => :NewRelicPinger, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
       "W3C_Validator/1.1" =>
@@ -394,7 +394,7 @@ describe Aua do
       "Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.14pre) Gecko/20110113 Ubuntu/9.10 (karmic)" =>
         { :type => :Browser, :name => :Gecko, :version => "20110113", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
       "Mozilla/5.0 (X11; U; SunOS sun4u; en-US; rv:1.7) Gecko/20070606" =>
-        { :type => :Browser, :name => :Gecko, :version => "20070606", :os_name => :Linux, :os_version => "Solaris", :platform => :X11 },
+        { :type => :Browser, :name => :Gecko, :version => "20070606", :major_version => "20070606", :os_name => :Linux, :os_version => "Solaris", :platform => :X11 },
       "Mozilla/5.0 (X11; U; FreeBSD i386; en-US; rv:1.7.12) Gecko/20051105" =>
         { :type => :Browser, :name => :Gecko, :version => "20051105", :os_name => :Linux, :os_version => "FreeBSD", :platform => :X11 },
     }

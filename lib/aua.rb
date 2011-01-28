@@ -45,6 +45,16 @@ class Aua
     @version ||= name ? version_of(name) : nil
   end
   
+  MAJOR_VERSION = /^([\d]+)\.([\d]+[a-z]*)/
+  
+  def major_version
+    @major_version ||= (version || "") =~ MAJOR_VERSION ? "#{$1}.#{$2}" : version
+  end
+  
+  def os_major_version
+    @os_major_version ||= (os_version || "") =~ MAJOR_VERSION ? "#{$1}.#{$2}" : os_version
+  end
+  
   def products
     @products ||= parts.map{|p| p[0] }
   end
