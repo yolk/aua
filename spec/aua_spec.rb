@@ -365,6 +365,8 @@ describe Aua do
         { :type => :FeedReader, :name => :Netvibes, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "AppleSyndication/38" =>
         { :type => :FeedReader, :name => :AppleSyndication, :version => "38", :os_name => nil, :os_version => nil, :platform => nil },
+      "Tumblr/1.0 RSS syndication (+http://www.tumblr.com/) (support@tumblr.com)" =>
+        { :type => :FeedReader, :name => :TumblrRSSSyndication, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
       
       # SearchBots
       "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)" =>

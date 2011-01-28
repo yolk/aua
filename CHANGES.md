@@ -4,6 +4,7 @@
 
 * Some Darwin build number additions
 * Added Zend_Http_Client as ApiClient
+* Added TumblrRSSSyndication as FeedReader
 
 ### 0.1.2 / 2011-01-28
 
