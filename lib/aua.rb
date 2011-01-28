@@ -29,11 +29,20 @@ class Aua
   attr_reader :version, :os_name, :os_version, :parts, :raw, :platform
   
   def name
-    unknown? ? raw : @name
+    @name unless unknown?
+    if simple?
+      app
+    else
+      raw
+    end
   end
   
   def type
     @type || :Unknown
+  end
+  
+  def version
+    @version ||= name ? version_of(name) : nil
   end
   
   def products
@@ -77,16 +86,16 @@ class Aua
     @os_string ||= comments.first && comments.first[2]
   end
   
-  def version
-    @version ||= name ? version_of(name) : nil
-  end
-  
   def unknown?
     type == :Unknown
   end
   
+  def simple?
+    products.size == 1 && versions.size <= 1 && comments == [[]]
+  end
+  
   def to_s
-    return "Unknown: #{raw}" if unknown?
+    return "Unknown: #{raw}#{" (simple)" if simple?}" if unknown?
     "#{type} #{name}/#{version} #{os_name}/#{os_version} #{platform}"
   end
 end

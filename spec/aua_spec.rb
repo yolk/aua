@@ -432,7 +432,7 @@ describe Aua do
     its(:to_s) { should eql("Unknown: ")}
   end
   
-  context "simple user agent string" do
+  context "standard user agent string" do
     subject{ Aua.new("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13") }
     
     its(:raw) { should eql("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13")}
@@ -474,6 +474,25 @@ describe Aua do
     its(:name)        { should eql("Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13") }
     its(:type)        { should eql(:Unknown) }
     its(:version)     { should eql(nil) }
+    its(:os_name)     { should eql(nil) }
+    its(:os_version)  { should eql(nil) }
+    its(:platform)    { should eql(nil) }
+  end
+  
+  context "unknown simple user agent string" do
+    subject{ Aua.new("my_mite_app/v1.0") }
+    
+    its(:raw) { should eql("my_mite_app/v1.0")}
+    its(:products) { should eql(["my_mite_app"]) }
+    its(:versions) { should eql(["v1.0"]) }
+    its(:comments) { should eql([[]]) }
+    
+    it{ should be_unknown }
+    its(:to_s) { should eql("Unknown: my_mite_app/v1.0 (simple)")}
+    
+    its(:name)        { should eql("my_mite_app") }
+    its(:type)        { should eql(:Unknown) }
+    its(:version)     { should eql("v1.0") }
     its(:os_name)     { should eql(nil) }
     its(:os_version)  { should eql(nil) }
     its(:platform)    { should eql(nil) }
