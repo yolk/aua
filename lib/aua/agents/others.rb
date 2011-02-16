@@ -1,5 +1,5 @@
 module Aua::Agents::Others
-  KNOWN_CLIENTS = %w(1PasswordThumbs)
+  KNOWN_CLIENTS = %w(1PasswordThumbs 1PasswordThumbs1)
   
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
@@ -17,6 +17,8 @@ module Aua::Agents::Others
         :MSOffice
       elsif products[-1] == "Word"
         :MSWord
+      elsif app == "1PasswordThumbs1"
+        :"1PasswordThumbs"
       else
         app.to_sym
       end
@@ -27,6 +29,7 @@ module Aua::Agents::Others
     @version ||= begin
       return version_of("Word") if name == :MSWord
       return version_of("Office") if name == :MSOffice
+      return "1" if app == "1PasswordThumbs1"
       super 
     end
   end

@@ -2,6 +2,8 @@
 
 [full changelog](http://github.com/yolk/aua/compare/v0.2.0...master)
 
+* Added support for facebookexternalhit, Wget and others
+
 ### 0.2.0 / 2011-01-28
 
 [full changelog](http://github.com/yolk/aua/compare/v0.1.3...v0.2.0)

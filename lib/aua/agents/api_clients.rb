@@ -1,5 +1,5 @@
 module Aua::Agents::ApiClients
-  KNOWN_CLIENTS = %w(curl Zend_Http_Client Zendesk Python-urllib Ruby PEAR NativeHost Java AppEngine-Google Twisted)
+  KNOWN_CLIENTS = %w(facebookexternalhit Wget curl Zend_Http_Client Zendesk Python-httplib2 Python-urllib Ruby PEAR HTTP_Request2 NativeHost Java AppEngine-Google Twisted)
   
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
@@ -20,8 +20,8 @@ module Aua::Agents::ApiClients
     @name ||= begin
       if raw =~ PATTERN_YAHOO_PIPES
         :YahooPipes
-      elsif app == "PEAR"
-        :PearPHP
+      elsif app == "PEAR" || app == "HTTP_Request2"
+        :PearPHPHttpRequest
       elsif app == "NativeHost"
         :CappucinosNativeHost
       elsif app =~ PATTERN_GERMAN_SYSTEM_PREFS

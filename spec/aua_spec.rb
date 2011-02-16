@@ -287,6 +287,10 @@ describe Aua do
       # ApiClients
       "curl/7.20.0 (x86_64-pc-linux-gnu) libcurl/7.20.0 OpenSSL/0.9.8l zlib/1.2.3" =>
         { :type => :ApiClient, :name => :curl, :version => "7.20.0", :os_name => :Linux, :os_version => nil, :platform => :X11 },
+      "Wget/1.12 (linux-gnu)" =>
+        { :type => :ApiClient, :name => :Wget, :version => "1.12", :os_name => :Linux, :os_version => nil, :platform => :X11 },
+      "Wget/1.10.1 (simple)" =>
+        { :type => :ApiClient, :name => :Wget, :version => "1.10.1", :os_name => nil, :os_version => nil, :platform => nil },
       "Yahoo Pipes 2.0" => 
         { :type => :ApiClient, :name => :YahooPipes, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Zendesk" =>
@@ -295,10 +299,14 @@ describe Aua do
         { :type => :ApiClient, :name => :Zend_Http_Client, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "Python-urllib/2.6" =>
         { :type => :ApiClient, :name => :"Python-urllib", :version => "2.6", :os_name => nil, :os_version => nil, :platform => nil },
+      "Python-httplib2/$Rev$ (simple)" =>
+        { :type => :ApiClient, :name => :"Python-httplib2", :version => "$Rev$", :os_name => nil, :os_version => nil, :platform => nil },
       "Ruby" =>
         { :type => :ApiClient, :name => :Ruby, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "PEAR HTTP_Request class ( http://pear.php.net/ )" =>
-        { :type => :ApiClient, :name => :PearPHP, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+        { :type => :ApiClient, :name => :PearPHPHttpRequest, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+      "HTTP_Request2/0.5.1 (http://pear.php.net/package/http_request2) PHP/5.3.2" =>
+        { :type => :ApiClient, :name => :PearPHPHttpRequest, :version => "0.5.1", :os_name => nil, :os_version => nil, :platform => nil },
       "NativeHost" =>
         { :type => :ApiClient, :name => :CappucinosNativeHost, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "Java/1.6.0_20" =>
@@ -317,10 +325,14 @@ describe Aua do
         { :type => :ApiClient, :name => :"AppEngine-Google", :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "Twisted PageGetter" =>
         { :type => :ApiClient, :name => :PythonTwistedPageGetter, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+      "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" =>
+        { :type => :ApiClient, :name => :facebookexternalhit, :version => "1.1", :os_name => nil, :os_version => nil, :platform => nil },
       
       # Others
       "1PasswordThumbs/1 CFNetwork/454.11.5 Darwin/10.0.0 (i386) (MacBookPro4%2C1)" =>
         { :type => :Others, :name => :"1PasswordThumbs", :version => "1", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
+      "1PasswordThumbs1 CFNetwork/438.16 Darwin/9.8.0 (i386) (MacBook5%2C1)" =>
+        { :type => :Others, :name => :"1PasswordThumbs", :version => "1", :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; Intel Mac OS X) Word/12.25.0" =>
         { :type => :Others, :name => :MSWord, :version => "12.25.0", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Microsoft Office/14.0 (Windows NT 6.1; Microsoft Outlook 14.0.5128; Pro; ms-office; MSOffice 14)" =>
