@@ -1,1 +1,1 @@
-rvm use ruby-1.9.2@aua
+rvm use ruby-1.9.3@aua --create
