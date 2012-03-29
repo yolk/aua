@@ -409,6 +409,9 @@ describe Aua do
         { :type => :Browser, :name => :Gecko, :version => "20070606", :major_version => "20070606", :os_name => :Linux, :os_version => "Solaris", :platform => :X11 },
       "Mozilla/5.0 (X11; U; FreeBSD i386; en-US; rv:1.7.12) Gecko/20051105" =>
         { :type => :Browser, :name => :Gecko, :version => "20051105", :os_name => :Linux, :os_version => "FreeBSD", :platform => :X11 },
+        
+      "Reeder/1010.69.00 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (MacBookPro6%2C2)" =>
+        { :type => :FeedReader, :name => :Reeder, :version => "1010.69.00", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin }
     }
     
     EXAMPLES.each do |string, values|
