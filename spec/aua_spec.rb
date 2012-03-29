@@ -379,6 +379,8 @@ describe Aua do
         { :type => :FeedReader, :name => :AppleSyndication, :version => "38", :os_name => nil, :os_version => nil, :platform => nil },
       "Tumblr/1.0 RSS syndication (+http://www.tumblr.com/) (support@tumblr.com)" =>
         { :type => :FeedReader, :name => :TumblrRSSSyndication, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
+      "Reeder/1010.69.00 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (MacBookPro6%2C2)" =>
+        { :type => :FeedReader, :name => :Reeder, :version => "1010.69.00", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin },
       
       # SearchBots
       "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)" =>
@@ -410,8 +412,8 @@ describe Aua do
       "Mozilla/5.0 (X11; U; FreeBSD i386; en-US; rv:1.7.12) Gecko/20051105" =>
         { :type => :Browser, :name => :Gecko, :version => "20051105", :os_name => :Linux, :os_version => "FreeBSD", :platform => :X11 },
         
-      "Reeder/1010.69.00 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (MacBookPro6%2C2)" =>
-        { :type => :FeedReader, :name => :Reeder, :version => "1010.69.00", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin }
+      "Raven/0.7.14612 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (iMac12%2C2)" =>
+        { :type => :Browser, :name => :Raven, :version => "0.7.14612", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin },
     }
     
     EXAMPLES.each do |string, values|

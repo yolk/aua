@@ -6,7 +6,7 @@ class Aua
     extend self
      
     def default
-      @default ||= [HttpChecker, ApiClients, FeedReader, Firefox, Chrome::Frame, Chrome, Safari, Opera, Msie, SearchBot, Konqueror, Others, EngineFallback]
+      @default ||= [HttpChecker, ApiClients, FeedReader, Firefox, Chrome::Frame, Chrome, Safari, Opera, Msie, SearchBot, Konqueror, Others, EngineFallback, OtherBrowsers]
     end
   end
 end
