@@ -1,6 +1,10 @@
 ### dev
 
-[full changelog](http://github.com/yolk/aua/compare/v0.2.1...master)
+[full changelog](http://github.com/yolk/aua/compare/v0.2.2...master)
+
+### 0.2.2 / 2012-03-29
+
+[full changelog](http://github.com/yolk/aua/compare/v0.2.1...v0.2.2)
 
 ### 0.2.1 / 2011-01-28
 
