@@ -1,5 +1,5 @@
 module Aua::Agents::FeedReader
-  KNOWN_CLIENTS = %w(Reeder AppleSyndication Netvibes Windows-RSS-Platform Vienna NewsGatorOnline NewsFire NetNewsWire MWFeedParser SimplePie MagpieRSS Feedfetcher-Google Apple-PubSub)
+  KNOWN_CLIENTS = %w(hawkReader Fever Superfeedr Feedly Reeder AppleSyndication Netvibes Windows-RSS-Platform Vienna NewsGatorOnline NewsFire NetNewsWire MWFeedParser SimplePie MagpieRSS Feedfetcher-Google Apple-PubSub)
 
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
@@ -16,6 +16,6 @@ module Aua::Agents::FeedReader
   end
 
   def version
-    @version ||= versions.first
+    @version ||= versions[0] || versions[1]
   end
 end

@@ -363,6 +363,14 @@ describe Aua do
         { :type => :HttpChecker, :name => :FeedValidator, :version => "1.3", :os_name => nil, :os_version => nil, :platform => nil },
 
       # Feed Reader/Parser
+      "hawkReader/0.9b (Feed Parser; http://www.hawkreader.com; Allow like Gecko)" =>
+        { :type => :FeedReader, :name => :hawkReader, :version => "0.9b", :os_name => nil, :os_version => nil, :platform => nil  },
+      "Fever/1.31 (Feed Parser; http://feedafever.com; Allow like Gecko)" =>
+        { :type => :FeedReader, :name => :Fever, :version => "1.31", :os_name => nil, :os_version => nil, :platform => nil  },
+      "Superfeedr bot/2.0 http://superfeedr.com - Make your feeds realtime: get in touch!" =>
+        { :type => :FeedReader, :name => :Superfeedr, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil  },
+      "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)" =>
+        { :type => :FeedReader, :name => :Feedly, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Windows-RSS-Platform/2.0 (MSIE 9.0; Windows NT 6.1)" =>
         { :type => :FeedReader, :name => :"Windows-RSS-Platform", :version => "2.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Vienna/2.5.0.2501" =>
