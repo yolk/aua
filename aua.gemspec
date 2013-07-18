@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Sebastian Munz"]
   s.email       = ["sebastian@yo.lk"]
+  s.license     = 'MIT'
   s.homepage    = "https://github.com/yolk/aua"
   s.summary     = %q{aua = a user agent (parser).}
   s.description = %q{aua = a user agent (parser).}
