@@ -4,7 +4,10 @@ module Aua::Agents::Msie
     agent.app_comments_string =~ PATTERN
   end
 
-  PATTERN = /MSIE ([\d.]+)/
+  PATTERN = /(MSIE |Trident\/)([\d.]+)/
+  TRIDENT_VERSION_MAP = {
+    "7.0" => "11.0"
+  }
 
   def type
     :Browser
@@ -17,7 +20,7 @@ module Aua::Agents::Msie
   def version
     @version ||= begin
       app_comments_string =~ PATTERN
-      $1
+      $1 == "Trident\/" ? TRIDENT_VERSION_MAP[$2] || $2 : $2
     end
   end
 end

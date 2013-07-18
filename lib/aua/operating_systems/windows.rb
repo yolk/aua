@@ -7,6 +7,8 @@ module Aua::OperatingSystems::Windows
   end
 
   VERSIONS = {
+    "NT 6.3"  => "8.1",
+    "NT 6.2"  => "8",
     "NT 6.1"  => "7",
     "NT 6.0"  => "Vista",
     "NT 5.2"  => "XP",
