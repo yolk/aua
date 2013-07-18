@@ -43,6 +43,8 @@ describe Aua do
 
     EXAMPLES = {
       # Firefox
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:22.0) Gecko/20100101 Firefox/22.0" =>
+        { :type => :Browser, :name => :Firefox, :version => "22.0", :major_version => "22.0", :os_name => :MacOSX, :os_version => "10.8", :os_major_version => "10.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13" =>
         { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :MacOSX, :os_version => "10.6", :os_major_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.11) Gecko/20101012 Firefox/3.6.11 " =>
@@ -109,6 +111,8 @@ describe Aua do
         { :type => :Browser, :name => :NetscapeNavigator, :version => "8.0.1", :os_name => :Windows, :os_version => "2000", :platform => :Windows },
 
       # Safari
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/536.30.1 (KHTML, like Gecko) Version/6.0.5 Safari/536.30.1" =>
+        { :type => :Browser, :name => :Safari, :version => "6.0.5", :os_name => :MacOSX, :os_version => "10.8.4", :os_major_version => "10.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; de-de) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.2 Safari/533.18.5" =>
         { :type => :Browser, :name => :Safari, :version => "5.0.2", :os_name => :MacOSX, :os_version => "10.5.8", :os_major_version => "10.5", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-us) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4" =>
@@ -153,6 +157,8 @@ describe Aua do
         { :type => :Browser, :name => :Konqueror, :version => "4.0", :os_name => :Windows, :os_version => nil, :platform => :Windows },
 
       # Chrome
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36" =>
+        { :type => :Browser, :name => :Chrome, :version => "28.0.1500.71", :major_version => "28.0", :os_name => :MacOSX, :os_version => "10.8.4", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.638.0 Safari/534.16" =>
         { :type => :Browser, :name => :Chrome, :version => "10.0.638.0", :major_version => "10.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.15 (KHTML, like Gecko) Ubuntu/10.10 Chromium/10.0.613.0 Chrome/10.0.613.0 Safari/534.15" =>
