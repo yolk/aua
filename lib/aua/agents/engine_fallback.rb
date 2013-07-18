@@ -4,11 +4,11 @@ module Aua::Agents::EngineFallback
     (agent.products.include?("AppleWebKit") ||
     agent.products.include?("Gecko"))
   end
-  
+
   def type
     :Browser
   end
-  
+
   def name
     @name ||= begin
       return :AppleWebKit if products.include?("AppleWebKit")

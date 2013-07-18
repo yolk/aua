@@ -2,7 +2,7 @@ module Aua::Agents::SearchBot
   PATTERN_BING = /bingbot\/([\d\.]+)/
   PATTERN_BAIDU = /Baiduspider\/?([\d\.]+)?/
   PATTERN_GOOGLE = /Googlebot(-Mobile)?\/?([\d\.]+)?/
-  
+
   def self.extend?(agent)
     agent.raw =~ PATTERN_BING ||
     agent.app_comments[1] == "Yahoo! Slurp" ||
@@ -10,11 +10,11 @@ module Aua::Agents::SearchBot
     agent.raw =~ PATTERN_GOOGLE ||
     agent.app == "msnbot"
   end
-  
+
   def type
     :SearchBot
   end
-  
+
   def name
     @name ||= begin
       return :Bingbot if raw =~ PATTERN_BING
@@ -24,13 +24,13 @@ module Aua::Agents::SearchBot
       app.to_sym
     end
   end
-  
+
   def version
     @version ||= begin
       return $1 if raw =~ PATTERN_BING
       return $1  if raw =~ PATTERN_BAIDU
       return $2  if raw =~ PATTERN_GOOGLE
-      super 
+      super
     end
   end
 end

@@ -2,11 +2,11 @@ module Aua::Agents::Chrome
   def self.extend?(agent)
     agent.products.include?("Safari") && agent.products.include?("Chrome")
   end
-  
+
   def type
     :Browser
   end
-  
+
   def name
     @name ||= begin
       return :Iron if products.include?("Iron")
@@ -14,7 +14,7 @@ module Aua::Agents::Chrome
       :Chrome
     end
   end
-  
+
   module Frame
     def self.extend?(agent)
       agent.products.include?("chromeframe")

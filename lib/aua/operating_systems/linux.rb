@@ -1,22 +1,22 @@
 module Aua::OperatingSystems::Linux
-  
+
   def self.extend?(agent)
     agent.platform_string == "X11" || agent.app_comments_string.match(PATTERN_LINUX)
   end
-  
+
   PATTERN_LINUX = /(l|L)inux/
-  
+
   def platform
     :X11
   end
-  
+
   def os_name
     :Linux
   end
-  
+
   def os_version
     @os_version ||= if app_comments_string =~ /OpenBSD/
-      "OpenBSD" 
+      "OpenBSD"
     elsif products.include?("Ubuntu")
       "Ubuntu"
     elsif products.include?("Red") && products.include?("Hat")

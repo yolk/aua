@@ -1,14 +1,14 @@
 module Aua::Agents::Firefox
   PATTERN =  /^(Firefox|(p|P)rism|SeaMonkey|Camino|Iceweasel|Thunderbird|Epiphany|Namoroka|Flock|Navigator|Netscape)/
-  
+
   def self.extend?(agent)
     agent.products.find{|product| product =~ PATTERN}
   end
-  
+
   def type
     :Browser
   end
-  
+
   def name
     @name ||= begin
       if products.include?("Prism")  || products.include?("prism")
@@ -28,7 +28,7 @@ module Aua::Agents::Firefox
       :Firefox
     end
   end
-  
+
   def version
     @version ||= begin
       return version_of("Namoroka") if products.include?("Namoroka")

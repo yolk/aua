@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe Aua do
-  
+
   describe ".parse/.new" do
     it "should be fast" do
       start = Time.now
       runs = 10
-      runs.times do 
+      runs.times do
         EXAMPLES.each do |string, values|
           Aua.parse string
         end
@@ -16,34 +16,34 @@ describe Aua do
       puts "#{sec} sec #{mspr} ms/string #{(EXAMPLES.size*runs/sec).to_i} strings/sec"
       mspr.should < 0.2
     end
-    
+
     context "when parsing blank string" do
       let(:user_agent) { Aua.parse("") }
-      
+
       it "returns an instance of Aua" do
         user_agent.should be_kind_of(Aua)
       end
     end
-    
+
     context "when parsing nil" do
       let(:user_agent) { Aua.parse(nil) }
-      
+
       it "returns an instance of Aua" do
         user_agent.should be_kind_of(Aua)
       end
     end
-    
+
     context "when parsing unknown string" do
       let(:user_agent) { Aua.parse("Bla/1.2.3;Blupp;X/2.0.0") }
-      
+
       it "returns an instance of Aua" do
         user_agent.should be_kind_of(Aua)
       end
     end
-    
+
     EXAMPLES = {
       # Firefox
-      "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13" => 
+      "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13" =>
         { :type => :Browser, :name => :Firefox, :version => "3.6.13", :major_version => "3.6", :os_name => :MacOSX, :os_version => "10.6", :os_major_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.11) Gecko/20101012 Firefox/3.6.11 " =>
         { :type => :Browser, :name => :Firefox, :version => "3.6.11", :major_version => "3.6", :os_name => :Windows, :os_version => "Vista", :os_major_version => "Vista", :platform => :Windows },
@@ -81,7 +81,7 @@ describe Aua do
         { :type => :Browser, :name => :Firefox, :version => "4.0b10pre", :major_version => "4.0b", :os_name => :Linux, :os_version => nil, :os_major_version => nil, :platform => :X11 },
       "Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.14pre) Gecko/20110113 Ubuntu/9.10 (karmic) Namoroka/3.6.14pre" =>
         { :type => :Browser, :name => :Firefox, :version => "3.6.14pre", :major_version => "3.6", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
-      
+
       # Firefox/Mozilla based
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9a9pre) Gecko/2007110108 prism/0.8" =>
         { :type => :Browser, :name => :Prism, :version => "0.8", :major_version => "0.8", :os_name => :Windows, :os_version => "7", :platform => :Windows },
@@ -107,7 +107,7 @@ describe Aua do
         { :type => :Browser, :name => :NetscapeNavigator, :version => "9.0.0.6", :os_name => :Linux, :os_version => nil, :platform => :X11 },
       "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.5) Gecko/20050519 Netscape/8.0.1" =>
         { :type => :Browser, :name => :NetscapeNavigator, :version => "8.0.1", :os_name => :Windows, :os_version => "2000", :platform => :Windows },
-      
+
       # Safari
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; de-de) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.2 Safari/533.18.5" =>
         { :type => :Browser, :name => :Safari, :version => "5.0.2", :os_name => :MacOSX, :os_version => "10.5.8", :os_major_version => "10.5", :platform => :Macintosh },
@@ -115,7 +115,7 @@ describe Aua do
         { :type => :Browser, :name => :Safari, :version => "5.0.3", :os_name => :MacOSX, :os_version => "10.6.6", :os_major_version => "10.6", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; de-de) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10" =>
         { :type => :Browser, :name => :Safari, :version => "4.0.4", :os_name => :MacOSX, :os_version => "10.6.2", :platform => :Macintosh },
-      "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10" => 
+      "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10" =>
         { :type => :Browser, :name => :Safari, :version => "4.0.4", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_7; en-us) AppleWebKit/525.28.3 (KHTML, like Gecko) Version/3.2.3 Safari/525.28.3" =>
         { :type => :Browser, :name => :Safari, :version => "3.2.3", :os_name => :MacOSX, :os_version => "10.5.7", :platform => :Macintosh },
@@ -129,7 +129,7 @@ describe Aua do
         { :type => :Browser, :name => :Safari, :version => "1.0", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Safari/6533.19.4 CFNetwork/454.11.5 Darwin/10.6.0 (i386) (iMac8%2C1)" =>
         { :type => :Browser, :name => :Safari, :version => "6533.19.4", :major_version => "6533.19", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
-        
+
       # Safari based
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; de-de) AppleWebKit/533.18.1 (KHTML, like Gecko) Fluid/0.9.6 Safari/533.18.1" =>
         { :type => :Browser, :name => :Fluid, :version => "0.9.6", :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
@@ -150,8 +150,8 @@ describe Aua do
       "Mozilla/5.0 (compatible; Konqueror/4.3; Linux 2.6.31-16-generic; X11) KHTML/4.3.2 (like Gecko)" =>
         { :type => :Browser, :name => :Konqueror, :version => "4.3", :os_name => :Linux, :os_version => nil, :platform => :X11 },
       "Mozilla/5.0 (compatible; Konqueror/4.0; Windows) KHTML/4.0.83 (like Gecko)" =>
-        { :type => :Browser, :name => :Konqueror, :version => "4.0", :os_name => :Windows, :os_version => nil, :platform => :Windows },  
-        
+        { :type => :Browser, :name => :Konqueror, :version => "4.0", :os_name => :Windows, :os_version => nil, :platform => :Windows },
+
       # Chrome
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.638.0 Safari/534.16" =>
         { :type => :Browser, :name => :Chrome, :version => "10.0.638.0", :major_version => "10.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
@@ -159,7 +159,7 @@ describe Aua do
         { :type => :Browser, :name => :Chrome, :version => "10.0.613.0", :os_name => :Linux, :os_version => "Ubuntu", :platform => :X11 },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.552.231 Safari/534.10" =>
         { :type => :Browser, :name => :Chrome, :version => "8.0.552.231", :os_name => :MacOSX, :os_version => "10.6.4", :platform => :Macintosh },
-      
+
       # Chrome based
       "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.552.237 Safari/534.10 chromeframe/8.0.552.237" =>
         { :type => :Browser, :name => :Chromeframe, :version => "8.0.552.237", :os_name => :Windows, :os_version => "7", :platform => :Windows },
@@ -171,7 +171,7 @@ describe Aua do
         { :type => :Browser, :name => :Iron, :version => "5.0.381.0", :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-US) AppleWebKit/534.10 (KHTML, like Gecko) RockMelt/0.8.40.147 Chrome/8.0.552.231 Safari/534.10" =>
         { :type => :Browser, :name => :RockMelt, :version => "0.8.40.147", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
-      
+
       # Opera
       "Opera/9.80 (Windows NT 6.1; U; de) Presto/2.7.62 Version/11.00" =>
         { :type => :Browser, :name => :Opera, :version => "11.00", :os_name => :Windows, :os_version => "7", :platform => :Windows },
@@ -183,11 +183,11 @@ describe Aua do
         { :type => :Browser, :name => :Opera, :version => "10.00", :os_name => :Linux, :os_version => nil, :platform => :X11 },
       "Opera/9.25 (Windows NT 6.0; U; en)" =>
         { :type => :Browser, :name => :Opera, :version => "9.25", :os_name => :Windows, :os_version => "Vista", :platform => :Windows },
-      "Mozilla/5.0 (Macintosh; PPC Mac OS X; U; en) Opera 8.5" => 
+      "Mozilla/5.0 (Macintosh; PPC Mac OS X; U; en) Opera 8.5" =>
         { :type => :Browser, :name => :Opera, :version => "8.5", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
-      "Mozilla/4.0 (compatible; MSIE 6.0; Mac_PowerPC Mac OS X; en) Opera 8.5" => 
+      "Mozilla/4.0 (compatible; MSIE 6.0; Mac_PowerPC Mac OS X; en) Opera 8.5" =>
         { :type => :Browser, :name => :Opera, :version => "8.5", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
-      "Opera/8.5 (Macintosh; PPC Mac OS X; U; en)" => 
+      "Opera/8.5 (Macintosh; PPC Mac OS X; U; en)" =>
         { :type => :Browser, :name => :Opera, :version => "8.5", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Opera/8.01 (Windows NT 5.1)" =>
         { :type => :Browser, :name => :Opera, :version => "8.01", :major_version => "8.01", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
@@ -195,7 +195,7 @@ describe Aua do
         { :type => :Browser, :name => :Opera, :version => "8.01", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Mozilla/4.0 (compatible; MSIE 5.0; Windows 95) Opera 6.01 [en]" =>
         { :type => :Browser, :name => :Opera, :version => "6.01", :os_name => :Windows, :os_version => "95", :platform => :Windows },
-      
+
       # Opera Mini/Mobile
       "Opera/9.80 (BlackBerry; Opera Mini/5.1.22303/22.453; U; de) Presto/2.5.25 Version/10.54" =>
         { :type => :Browser, :name => :OperaMini, :version => "5.1.22303", :os_name => :BlackBerry, :os_version => nil, :platform => :BlackBerry },
@@ -207,7 +207,7 @@ describe Aua do
         { :type => :Browser, :name => :OperaMobile, :version => "10.00", :os_name => :SymbianOS, :os_version => nil, :platform => :SymbianOS },
       "Opera/9.80 (Linux armv7l; Maemo; Opera Mobi/4; U; de) Presto/2.5.28 Version/10.1" =>
         { :type => :Browser, :name => :OperaMobile, :version => "10.1", :os_name => :Linux, :os_version => "Maemo", :platform => :X11 },
-        
+
       # MSIE
       "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)" =>
         { :type => :Browser, :name => :MSIE, :version => "9.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
@@ -229,7 +229,7 @@ describe Aua do
         { :type => :Browser, :name => :MSIE, :version => "7.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Mozilla/4.0 (compatible; MSIE 6.0; Windows XP)" =>
         { :type => :Browser, :name => :MSIE, :version => "6.0", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
-        
+
       # iPhone / iPad / iPod
       "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_2_1 like Mac OS X; de-de) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5" =>
         { :type => :Browser, :name => :MobileSafari, :version => "5.0.2", :os_name => :iOS, :os_version => "4.2.1", :platform => :iPhone },
@@ -241,21 +241,21 @@ describe Aua do
         { :type => :Browser, :name => :MobileSafari, :version => "3.1.1", :os_name => :iOS, :os_version => "2.1", :platform => :iPhone },
       "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C28 Safari/419.3" =>
         { :type => :Browser, :name => :MobileSafari, :version => "3.0", :os_name => :iOS, :os_version => nil, :platform => :iPhone },
-      
+
       "Mozilla/5.0 (iPod; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7" =>
         { :type => :Browser, :name => :MobileSafari, :version => "4.0.5", :os_name => :iOS, :os_version => "4.0", :platform => :iPod },
       "Mozilla/5.0 (iPod; U; CPU iPhone OS 2_2_1 like Mac OS X; en-us) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5H11a Safari/525.20" =>
         { :type => :Browser, :name => :MobileSafari, :version => "3.1.1", :os_name => :iOS, :os_version => "2.2.1", :platform => :iPod },
       "Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A100a Safari/419.3" =>
         { :type => :Browser, :name => :MobileSafari, :version => "3.0", :os_name => :iOS, :os_version => nil, :platform => :iPod },
-        
+
       "Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; es-es) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405" =>
         { :type => :Browser, :name => :MobileSafari, :version => "7B405", :major_version => "7B405", :os_name => :iOS, :os_version => "3.2.1", :platform => :iPad },
       "Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; es-es) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B405 Safari/531.21.10" =>
         { :type => :Browser, :name => :MobileSafari, :version => "4.0.4", :os_name => :iOS, :os_version => "3.2.1", :platform => :iPad },
       "Mozilla/5.0 (iPad; U; CPU OS 4_2_1 like Mac OS X; de-de) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5" =>
         { :type => :Browser, :name => :MobileSafari, :version => "5.0.2", :os_name => :iOS, :os_version => "4.2.1", :platform => :iPad },
-      
+
       # Android
       "Mozilla/5.0 (Linux; U; Android 1.1; en-gb; dream) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2" =>
         { :type => :Browser, :name => :AndroidWebkit, :version => "3.0.4", :os_name => :Android, :os_version => "1.1", :platform => :Android },
@@ -263,11 +263,11 @@ describe Aua do
         { :type => :Browser, :name => :AndroidWebkit, :version => nil, :os_name => :Android, :os_version => "0.5", :platform => :Android },
       "Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17" =>
         { :type => :Browser, :name => :AndroidWebkit, :version => "4.0", :os_name => :Android, :os_version => "2.1", :platform => :Android },
-        
+
       # Palm (Pre)
       "Mozilla/5.0 (webOS/1.3; U; en-US) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/1.0 Safari/525.27.1 Desktop/1.0" =>
         { :type => :Browser, :name => :webOSWebkit, :version => "1.0", :os_name => :webOS, :os_version => "1.3", :platform => :webOS },
-      
+
       # Mobiles
       "Mozilla/4.1 (compatible; MSIE 5.0; Symbian OS; Nokia 3650;424) Opera 6.10 [en]" =>
         { :type => :Browser, :name => :OperaMobile, :version => "6.10", :os_name => :SymbianOS, :os_version => nil, :platform => :SymbianOS },
@@ -283,7 +283,7 @@ describe Aua do
         { :type => :Browser, :name => :Opera, :version => "9.70", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "Swisscom/1.0/HTC_Touch_Pro/ Opera/9.50 (Windows NT 5.1; U; de)" =>
         { :type => :Browser, :name => :Opera, :version => "9.50", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
-      
+
       # ApiClients
       "curl/7.20.0 (x86_64-pc-linux-gnu) libcurl/7.20.0 OpenSSL/0.9.8l zlib/1.2.3" =>
         { :type => :ApiClient, :name => :curl, :version => "7.20.0", :os_name => :Linux, :os_version => nil, :platform => :X11 },
@@ -291,7 +291,7 @@ describe Aua do
         { :type => :ApiClient, :name => :Wget, :version => "1.12", :os_name => :Linux, :os_version => nil, :platform => :X11 },
       "Wget/1.10.1 (simple)" =>
         { :type => :ApiClient, :name => :Wget, :version => "1.10.1", :os_name => nil, :os_version => nil, :platform => nil },
-      "Yahoo Pipes 2.0" => 
+      "Yahoo Pipes 2.0" =>
         { :type => :ApiClient, :name => :YahooPipes, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Zendesk" =>
         { :type => :ApiClient, :name => :Zendesk, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
@@ -327,7 +327,7 @@ describe Aua do
         { :type => :ApiClient, :name => :PythonTwistedPageGetter, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" =>
         { :type => :ApiClient, :name => :facebookexternalhit, :version => "1.1", :os_name => nil, :os_version => nil, :platform => nil },
-      
+
       # Others
       "1PasswordThumbs/1 CFNetwork/454.11.5 Darwin/10.0.0 (i386) (MacBookPro4%2C1)" =>
         { :type => :Others, :name => :"1PasswordThumbs", :version => "1", :os_name => :MacOSX, :os_version => "10.6", :platform => :Macintosh },
@@ -337,7 +337,7 @@ describe Aua do
         { :type => :Others, :name => :MSWord, :version => "12.25.0", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Microsoft Office/14.0 (Windows NT 6.1; Microsoft Outlook 14.0.5128; Pro; ms-office; MSOffice 14)" =>
         { :type => :Others, :name => :MSOffice, :version => "14.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
-        
+
       # HttpCheckers
       "check_http/v2053 (nagios-plugins 1.4.13)" =>
         { :type => :HttpChecker, :name => :Nagios, :version => "v2053", :major_version => "v2053", :os_name => nil, :os_version => nil, :platform => nil },
@@ -349,7 +349,7 @@ describe Aua do
         { :type => :HttpChecker, :name => :W3C_Validator, :version => "1.1", :os_name => nil, :os_version => nil, :platform => nil },
       "FeedValidator/1.3" =>
         { :type => :HttpChecker, :name => :FeedValidator, :version => "1.3", :os_name => nil, :os_version => nil, :platform => nil },
-    
+
       # Feed Reader/Parser
       "Windows-RSS-Platform/2.0 (MSIE 9.0; Windows NT 6.1)" =>
         { :type => :FeedReader, :name => :"Windows-RSS-Platform", :version => "2.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
@@ -381,7 +381,7 @@ describe Aua do
         { :type => :FeedReader, :name => :TumblrRSSSyndication, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Reeder/1010.69.00 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (MacBookPro6%2C2)" =>
         { :type => :FeedReader, :name => :Reeder, :version => "1010.69.00", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin },
-      
+
       # SearchBots
       "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)" =>
         { :type => :SearchBot, :name => :Bingbot, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil },
@@ -399,7 +399,7 @@ describe Aua do
         { :type => :SearchBot, :name => :Googlebot, :version => "2.1", :os_name => nil, :os_version => nil, :platform => nil },
       "DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)" =>
         { :type => :SearchBot, :name => :GooglebotMobile, :version => "2.1", :os_name => nil, :os_version => nil, :platform => nil },
-        
+
       # Engine Fallbacks
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-au) AppleWebKit/533.19.4 (KHTML, like Gecko)" =>
         { :type => :Browser, :name => :AppleWebKit, :version => "533.19.4", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
@@ -411,11 +411,11 @@ describe Aua do
         { :type => :Browser, :name => :Gecko, :version => "20070606", :major_version => "20070606", :os_name => :Linux, :os_version => "Solaris", :platform => :X11 },
       "Mozilla/5.0 (X11; U; FreeBSD i386; en-US; rv:1.7.12) Gecko/20051105" =>
         { :type => :Browser, :name => :Gecko, :version => "20051105", :os_name => :Linux, :os_version => "FreeBSD", :platform => :X11 },
-        
+
       "Raven/0.7.14612 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (iMac12%2C2)" =>
         { :type => :Browser, :name => :Raven, :version => "0.7.14612", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin },
     }
-    
+
     EXAMPLES.each do |string, values|
       context "when parsing #{string.inspect}" do
         let(:user_agent) { Aua.parse(string) }
@@ -433,65 +433,65 @@ describe Aua do
     its(:products) { should eql([]) }
     its(:versions) { should eql([]) }
     its(:comments) { should eql([]) }
-    
+
     it "should return nil on #version_of" do
       subject.version_of(nil).should eql(nil)
       subject.version_of("Firefox").should eql(nil)
     end
-    
+
     its(:os_string) { should eql(nil) }
     its(:platform_string)    { should eql(nil) }
-    
+
     its(:name)        { should eql("") }
     its(:type)        { should eql(:Unknown) }
     its(:version)     { should eql(nil) }
     its(:os_name)     { should eql(nil) }
     its(:os_version)  { should eql(nil) }
     its(:platform)    { should eql(nil) }
-    
+
     it{ should be_unknown }
     its(:to_s) { should eql("Unknown: ")}
   end
-  
+
   context "standard user agent string" do
     subject{ Aua.new("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13") }
-    
+
     its(:raw) { should eql("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13")}
     its(:products) { should eql(["Mozilla", "Gecko", "Firefox"]) }
     its(:versions) { should eql(["5.0", "20101203", "3.6.13"]) }
     its(:comments) { should eql([["Macintosh", "U", "Intel Mac OS X 10.6", "de", "rv:1.9.2.13"], [], []]) }
-    
+
     it "should return version on #version_of" do
       subject.version_of("Mozilla").should eql("5.0")
       subject.version_of("Firefox").should eql("3.6.13")
     end
-    
+
     its(:platform_string) { should eql("Macintosh") }
     its(:os_string) { should eql("Intel Mac OS X 10.6") }
-    
+
     it{ should_not be_unknown }
     its(:to_s) { should eql("Browser Firefox/3.6.13 MacOSX/10.6 Macintosh")}
   end
-  
+
   context "unknown user agent string" do
     subject{ Aua.new("Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13") }
-    
+
     its(:raw) { should eql("Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13")}
     its(:products) { should eql(["Mozilla", "Less", "Vrrrr"]) }
     its(:versions) { should eql(["5.0", "20101203", "3.6.13"]) }
     its(:comments) { should eql([["Bla", "U", "Krank", "de", "rv:1.9.2.13"], [], []]) }
-    
+
     it "should return version on #version_of" do
       subject.version_of("Mozilla").should eql("5.0")
       subject.version_of("Vrrrr").should eql("3.6.13")
     end
-    
+
     its(:platform_string) { should eql("Bla") }
     its(:os_string) { should eql("Krank") }
-    
+
     it{ should be_unknown }
     its(:to_s) { should eql("Unknown: Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13")}
-    
+
     its(:name)        { should eql("Mozilla/5.0 (Bla; U; Krank; de; rv:1.9.2.13) Less/20101203 Vrrrr/3.6.13") }
     its(:type)        { should eql(:Unknown) }
     its(:version)     { should eql(nil) }
@@ -499,18 +499,18 @@ describe Aua do
     its(:os_version)  { should eql(nil) }
     its(:platform)    { should eql(nil) }
   end
-  
+
   context "unknown simple user agent string" do
     subject{ Aua.new("my_mite_app/v1.0") }
-    
+
     its(:raw) { should eql("my_mite_app/v1.0")}
     its(:products) { should eql(["my_mite_app"]) }
     its(:versions) { should eql(["v1.0"]) }
     its(:comments) { should eql([[]]) }
-    
+
     it{ should be_unknown }
     its(:to_s) { should eql("Unknown: my_mite_app/v1.0 (simple)")}
-    
+
     its(:name)        { should eql("my_mite_app") }
     its(:type)        { should eql(:Unknown) }
     its(:version)     { should eql("v1.0") }

@@ -1,12 +1,12 @@
 module Aua::Agents::Safari
   def self.extend?(agent)
-    agent.products[-1] == "Safari" || 
-    agent.products[0] == "Safari" || 
+    agent.products[-1] == "Safari" ||
+    agent.products[0] == "Safari" ||
     (agent.products == ["Mozilla", "AppleWebKit", "Mobile"] && Aua::OperatingSystems::IOS::PLATFORMS.include?(agent.platform_string)) ||
     agent.products.include?("OmniWeb") ||
     agent.products[0] == "MobileSafari"
   end
-  
+
   BUILDS = {
     '85' => '1.0',
     '85.5'=>'1.0',
@@ -38,11 +38,11 @@ module Aua::Agents::Safari
     '419' => '2.0.4',
     '425.13' => '2.2'
   }
-  
+
   def type
     :Browser
   end
-  
+
   def name
     @name ||= begin
       return :MobileSafari if products.include?("Mobile") || products[0] == "MobileSafari"
@@ -51,15 +51,15 @@ module Aua::Agents::Safari
       :Safari
     end
   end
-  
+
   def version
     @version ||= begin
       case name
       when :Fluid, :OmniWeb
         version_of(name)
       else
-        version_of("Version") || BUILDS[version_of("Safari")] || 
-        version_of("Mobile") || version_of("MobileSafari") || version_of("Safari") 
+        version_of("Version") || BUILDS[version_of("Safari")] ||
+        version_of("Mobile") || version_of("MobileSafari") || version_of("Safari")
       end
     end
   end

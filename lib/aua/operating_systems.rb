@@ -4,7 +4,7 @@ class Aua
   module OperatingSystems
     extend StackBase
     extend self
-     
+
     def default
       [Mobiles, Windows, Mac, Android, Linux, IOS, Palm]
     end

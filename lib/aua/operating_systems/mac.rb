@@ -1,11 +1,11 @@
 module Aua::OperatingSystems::Mac
-  
+
   def self.extend?(agent)
-    agent.platform_string == "Macintosh" || 
-    agent.os_string && agent.os_string =~ PATTERN_MACOS || 
+    agent.platform_string == "Macintosh" ||
+    agent.os_string && agent.os_string =~ PATTERN_MACOS ||
     agent.products.include?("Darwin")
   end
-  
+
   PATTERN_OSX   = /Mac OS X\s?([\d\._]+)?/
   PATTERN_MACOS = /Mac_PowerPC/
   DAWRWIN_2_OSX = {
@@ -37,11 +37,11 @@ module Aua::OperatingSystems::Mac
     '10.5.0' => '10.6.5',
     '10.6.0' => '10.6.6'
   }
-  
+
   def platform
     darwin? && !DAWRWIN_2_OSX[version_of(:Darwin)] ? :Darwin : :Macintosh
   end
-  
+
   def os_name
     @os_name ||= if osx?
       :MacOSX
@@ -51,7 +51,7 @@ module Aua::OperatingSystems::Mac
       :MacOS
     end
   end
-  
+
   def os_version
     @os_version ||= if m = osx?
       m[1] ? m[1].gsub(/_/, ".") : nil
@@ -59,17 +59,17 @@ module Aua::OperatingSystems::Mac
       DAWRWIN_2_OSX[version_of(:Darwin)] || version_of(:Darwin)
     end
   end
-  
+
   private
-  
+
   def osx?
     app_comments_string.match PATTERN_OSX
   end
-  
+
   def macos?
     app_comments_string.match PATTERN_MACOS
   end
-  
+
   def darwin?
     products.include?("Darwin")
   end
