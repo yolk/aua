@@ -349,6 +349,8 @@ describe Aua do
         { :type => :Others, :name => :MSWord, :version => "12.25.0", :os_name => :MacOSX, :os_version => nil, :platform => :Macintosh },
       "Microsoft Office/14.0 (Windows NT 6.1; Microsoft Outlook 14.0.5128; Pro; ms-office; MSOffice 14)" =>
         { :type => :Others, :name => :MSOffice, :version => "14.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
+      "Flint/165 CFNetwork/520.5.1 Darwin/11.4.2 (x86_64) (MacBookPro10%2C1)" =>
+        { :type => :Others, :name => :"Flint", :version => "165", :os_name => :MacOSX, :os_version => "10.7.5", :platform => :Macintosh },
 
       # HttpCheckers
       "check_http/v2053 (nagios-plugins 1.4.13)" =>
@@ -371,12 +373,22 @@ describe Aua do
         { :type => :FeedReader, :name => :Superfeedr, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil  },
       "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)" =>
         { :type => :FeedReader, :name => :Feedly, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
+      "FeedlyApp/1.0 (http://www.feedly.com)" =>
+        { :type => :FeedReader, :name => :FeedlyApp, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
+      "Feedbin" =>
+        { :type => :FeedReader, :name => :Feedbin, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+      "Feedbin - 1 subscribers" =>
+        { :type => :FeedReader, :name => :Feedbin, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "Windows-RSS-Platform/2.0 (MSIE 9.0; Windows NT 6.1)" =>
         { :type => :FeedReader, :name => :"Windows-RSS-Platform", :version => "2.0", :os_name => :Windows, :os_version => "7", :platform => :Windows },
       "Vienna/2.5.0.2501" =>
         { :type => :FeedReader, :name => :Vienna, :version => "2.5.0.2501", :os_name => nil, :os_version => nil, :platform => nil },
       "NewsGatorOnline/2.0 (http://www.newsgator.com; 1 subscribers)" =>
         { :type => :FeedReader, :name => :NewsGatorOnline, :version => "2.0", :os_name => nil, :os_version => nil, :platform => nil },
+      "FeedDemon/2.7 (http://www.newsgator.com/; Microsoft Windows XP)" =>
+        { :type => :FeedReader, :name => :FeedDemon, :version => "2.7", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
+      "FeedDemon/4.0 (http://www.feeddemon.com/; Microsoft Windows XP)" =>
+        { :type => :FeedReader, :name => :FeedDemon, :version => "4.0", :os_name => :Windows, :os_version => "XP", :platform => :Windows },
       "NewsFire/84 CFNetwork/454.11.5 Darwin/10.4.1 (i386) (iMac11%2C3)" =>
         { :type => :FeedReader, :name => :NewsFire, :version => "84", :os_name => :MacOSX, :os_version => "10.6.4", :platform => :Macintosh },
       "NetNewsWire/3.2b24 (Mac OS X; http://www.newsgator.com/Individuals/NetNewsWire/)" =>
@@ -401,6 +413,12 @@ describe Aua do
         { :type => :FeedReader, :name => :TumblrRSSSyndication, :version => "1.0", :os_name => nil, :os_version => nil, :platform => nil },
       "Reeder/1010.69.00 CFNetwork/520.3.2 Darwin/11.3.0 (x86_64) (MacBookPro6%2C2)" =>
         { :type => :FeedReader, :name => :Reeder, :version => "1010.69.00", :os_name => :Darwin, :os_version => "11.3.0", :platform => :Darwin },
+      "FeeddlerPro 1.12.5 (iPad; iPhone OS 6.1.3; de_DE)" =>
+        { :type => :FeedReader, :name => :FeeddlerPro, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+      "FeeddlerRSS 1.12.5 (iPad; iPhone OS 6.1.3; de_DE)" =>
+        { :type => :FeedReader, :name => :FeeddlerRSS, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
+      "FreeRSSReader/1.9.5 CFNetwork/672.0.2 Darwin/14.0.0" =>
+        { :type => :FeedReader, :name => :FreeRSSReader, :version => "1.9.5", :os_name => :Darwin, :os_version => "14.0.0", :platform => :Darwin },
 
       # SearchBots
       "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)" =>
@@ -419,6 +437,8 @@ describe Aua do
         { :type => :SearchBot, :name => :Googlebot, :version => "2.1", :os_name => nil, :os_version => nil, :platform => nil },
       "DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)" =>
         { :type => :SearchBot, :name => :GooglebotMobile, :version => "2.1", :os_name => nil, :os_version => nil, :platform => nil },
+      "FLUX-Toolchain/0.5 +http://odo.dwds.de/dwds-crawler.html" =>
+        { :type => :SearchBot, :name => :DWDSCrawler, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
 
       # Engine Fallbacks
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-au) AppleWebKit/533.19.4 (KHTML, like Gecko)" =>

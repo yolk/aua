@@ -8,7 +8,8 @@ module Aua::Agents::SearchBot
     agent.app_comments[1] == "Yahoo! Slurp" ||
     agent.raw =~ PATTERN_BAIDU ||
     agent.raw =~ PATTERN_GOOGLE ||
-    agent.app == "msnbot"
+    agent.app == "msnbot" ||
+    agent.app == "FLUX-Toolchain"
   end
 
   def type
@@ -21,6 +22,7 @@ module Aua::Agents::SearchBot
       return :YahooSlurp if app_comments[1] == "Yahoo! Slurp"
       return :Baiduspider if raw =~ PATTERN_BAIDU
       return $1 ? :GooglebotMobile : :Googlebot if raw =~ PATTERN_GOOGLE
+      return :DWDSCrawler if app == "FLUX-Toolchain"
       app.to_sym
     end
   end

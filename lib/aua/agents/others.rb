@@ -1,5 +1,5 @@
 module Aua::Agents::Others
-  KNOWN_CLIENTS = %w(1PasswordThumbs 1PasswordThumbs1)
+  KNOWN_CLIENTS = %w(1PasswordThumbs 1PasswordThumbs1 Flint)
 
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
