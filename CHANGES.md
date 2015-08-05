@@ -1,8 +1,13 @@
 ### dev
 
-[full changelog](http://github.com/yolk/aua/compare/v0.2.5...master)
+[full changelog](http://github.com/yolk/aua/compare/v0.2.6...master)
+
+### 0.2.6 / 2015-08-05
+
+[full changelog](http://github.com/yolk/aua/compare/v0.2.5...v0.2.6)
 
 * Show only major version for MSIE 12 (Edge)
+* Small fixes: Konqueror + Vienna RSS
 
 ### 0.2.5 / 2015-08-05
 
