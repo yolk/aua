@@ -1,7 +1,7 @@
 module Aua::Agents::Msie
 
   def self.extend?(agent)
-    agent.app_comments_string =~ PATTERN
+    agent.app_comments_string =~ PATTERN || agent.products[-1] == "Edge"
   end
 
   PATTERN = /(MSIE |Trident\/)([\d.]+)/
@@ -19,8 +19,11 @@ module Aua::Agents::Msie
 
   def version
     @version ||= begin
-      app_comments_string =~ PATTERN
-      $1 == "Trident\/" ? TRIDENT_VERSION_MAP[$2] || $2 : $2
+      if app_comments_string =~ PATTERN
+        $1 == "Trident\/" ? TRIDENT_VERSION_MAP[$2] || $2 : $2
+      else
+        version_of("Edge")
+      end
     end
   end
 end

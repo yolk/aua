@@ -215,6 +215,10 @@ describe Aua do
         { :type => :Browser, :name => :OperaMobile, :version => "10.1", :os_name => :Linux, :os_version => "Maemo", :platform => :X11 },
 
       # MSIE
+      "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0" =>
+        { :type => :Browser, :name => :MSIE, :version => "12.0", :os_name => :Windows, :os_version => "10", :platform => :Windows },
+      "Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0" =>
+        { :type => :Browser, :name => :MSIE, :version => "12.0", :os_name => :WindowsPhone, :os_version => "10", :platform => :Windows },
       "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv 11.0) like Gecko" =>
         { :type => :Browser, :name => :MSIE, :version => "11.0", :os_name => :Windows, :os_version => "8.1", :platform => :Windows },
       "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)" =>

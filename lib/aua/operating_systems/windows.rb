@@ -7,6 +7,8 @@ module Aua::OperatingSystems::Windows
   end
 
   VERSIONS = {
+    "10.0"    => "10",
+    "NT 10.0" => "10",
     "NT 6.3"  => "8.1",
     "NT 6.2"  => "8",
     "NT 6.1"  => "7",
@@ -22,17 +24,24 @@ module Aua::OperatingSystems::Windows
     "9x 4.90" => "ME"
   }
 
-  PATTERN = /Win(dows)?\s?([\d\sA-Zx\.]+)/
+  PATTERN = /Win(dows)?(\sPhone)?\s?([\d\sA-Zx\.]+)/
+  PHONE_PATTERN = /Windows Phone/
 
   def platform
     :Windows
   end
 
   def os_name
-    :Windows
+    @os_name ||= windows_phone? ? :WindowsPhone : :Windows
   end
 
   def os_version
-    @os_version ||= comments_string =~ PATTERN && VERSIONS[$2] || $2
+    @os_version ||= comments_string =~ PATTERN && VERSIONS[$3] || $3
+  end
+
+  private
+
+  def windows_phone?
+    !!(comments_string =~ PHONE_PATTERN)
   end
 end
