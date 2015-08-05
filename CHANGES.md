@@ -1,6 +1,10 @@
 ### dev
 
-[full changelog](http://github.com/yolk/aua/compare/v0.2.4...master)
+[full changelog](http://github.com/yolk/aua/compare/v0.2.5...master)
+
+### 0.2.5 / 2015-08-05
+
+[full changelog](http://github.com/yolk/aua/compare/v0.2.4...v0.2.5)
 
 * Fixed FluidApp detection
 
