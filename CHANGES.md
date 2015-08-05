@@ -2,6 +2,8 @@
 
 [full changelog](http://github.com/yolk/aua/compare/v0.2.5...master)
 
+* Show only major version for MSIE 12 (Edge)
+
 ### 0.2.5 / 2015-08-05
 
 [full changelog](http://github.com/yolk/aua/compare/v0.2.4...v0.2.5)
