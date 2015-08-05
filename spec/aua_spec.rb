@@ -157,6 +157,10 @@ describe Aua do
         { :type => :Browser, :name => :Konqueror, :version => "4.3", :os_name => :Linux, :os_version => nil, :platform => :X11 },
       "Mozilla/5.0 (compatible; Konqueror/4.0; Windows) KHTML/4.0.83 (like Gecko)" =>
         { :type => :Browser, :name => :Konqueror, :version => "4.0", :os_name => :Windows, :os_version => nil, :platform => :Windows },
+      "Mozilla/5.0 (X11; Linux x86_64) KHTML/5.8.0 (like Gecko) Konqueror/5.8" =>
+        { :type => :Browser, :name => :Konqueror, :version => "5.8", :os_name => :Linux, :os_version => nil, :platform => :X11 },
+      "Mozilla/5.0 (X11; Linux x86_64) KHTML/4.14.3 (like Gecko) Konqueror/4.14 Fedora/4.14.3-8.fc21" =>
+        { :type => :Browser, :name => :Konqueror, :version => "4.14", :os_name => :Linux, :os_version => "Fedora", :platform => :X11 },
 
       # Chrome
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36" =>
@@ -427,6 +431,8 @@ describe Aua do
         { :type => :FeedReader, :name => :FeeddlerRSS, :version => nil, :os_name => nil, :os_version => nil, :platform => nil },
       "FreeRSSReader/1.9.5 CFNetwork/672.0.2 Darwin/14.0.0" =>
         { :type => :FeedReader, :name => :FreeRSSReader, :version => "1.9.5", :os_name => :Darwin, :os_version => "14.0.0", :platform => :Darwin },
+      "Mozilla/5.0 Vienna/3.0.6" =>
+        { :type => :FeedReader, :name => :Vienna, :version => "3.0.6", :os_name => nil, :os_version => nil, :platform => nil },
 
       # SearchBots
       "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)" =>

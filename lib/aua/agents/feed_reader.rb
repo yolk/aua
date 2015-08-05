@@ -3,7 +3,8 @@ module Aua::Agents::FeedReader
 
   def self.extend?(agent)
     KNOWN_CLIENTS.include?(agent.app) ||
-    (agent.app == "Tumblr" && agent.products.include?("RSS") && agent.products.include?("syndication"))
+    (agent.app == "Tumblr" && agent.products.include?("RSS") && agent.products.include?("syndication")) ||
+    agent.products.include?("Vienna")
   end
 
   def type
@@ -12,10 +13,11 @@ module Aua::Agents::FeedReader
 
   def name
     return :TumblrRSSSyndication if app == "Tumblr"
+    return :Vienna if products.include?("Vienna")
     app.to_sym
   end
 
   def version
-    @version ||= versions[0] || versions[1]
+    @version ||= version_of(name) || versions[0] || versions[1]
   end
 end
