@@ -1,6 +1,12 @@
 ### dev
 
-[full changelog](http://github.com/yolk/aua/compare/v0.2.2...master)
+[full changelog](http://github.com/yolk/aua/compare/v0.2.4...master)
+
+### 0.2.4 / 2015-08-05
+
+[full changelog](http://github.com/yolk/aua/compare/v0.2.3...v0.2.4)
+
+* Added Windows 10 / WindowsPhone 10 / Edge (MSIE 12.0)
 
 ### 0.2.2 / 2012-03-29
 
