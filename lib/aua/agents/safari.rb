@@ -46,7 +46,7 @@ module Aua::Agents::Safari
   def name
     @name ||= begin
       return :MobileSafari if products.include?("Mobile") || products[0] == "MobileSafari"
-      return :Fluid if products.include?("Fluid")
+      return :Fluid if products.include?("Fluid") || products.include?("FluidApp")
       return :OmniWeb if products.include?("OmniWeb")
       :Safari
     end
@@ -55,9 +55,10 @@ module Aua::Agents::Safari
   def version
     @version ||= begin
       case name
-      when :Fluid, :OmniWeb
+      when :OmniWeb
         version_of(name)
       else
+        (name == :Fluid && version_of(:Fluid)) ||
         version_of("Version") || BUILDS[version_of("Safari")] ||
         version_of("Mobile") || version_of("MobileSafari") || version_of("Safari")
       end

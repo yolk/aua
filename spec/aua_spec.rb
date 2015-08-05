@@ -135,6 +135,8 @@ describe Aua do
         { :type => :Browser, :name => :Safari, :version => "6533.19.4", :major_version => "6533.19", :os_name => :MacOSX, :os_version => "10.6.6", :platform => :Macintosh },
 
       # Safari based
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/600.5.17 (KHTML, like Gecko) FluidApp Version/2156 Safari/600.5.17" =>
+        { :type => :Browser, :name => :Fluid, :version => "2156", :os_name => :MacOSX, :os_version => "10.10.3", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; de-de) AppleWebKit/533.18.1 (KHTML, like Gecko) Fluid/0.9.6 Safari/533.18.1" =>
         { :type => :Browser, :name => :Fluid, :version => "0.9.6", :os_name => :MacOSX, :os_version => "10.5.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_5_8; de-de) AppleWebKit/533.17.8 (KHTML, like Gecko) Fluid/0.9.6 Safari/533.17.8" =>
