@@ -18,12 +18,8 @@ module Aua::Agents::Msie
   end
 
   def version
-    @version ||= begin
-      if app_comments_string =~ PATTERN
-        $1 == "Trident\/" ? TRIDENT_VERSION_MAP[$2] || $2 : $2
-      else
-        version_of("Edge").split(/\./, 2)[0]
-      end
+    @version ||= if app_comments_string =~ PATTERN
+      $1 == "Trident\/" ? TRIDENT_VERSION_MAP[$2] || $2 : $2
     end
   end
 end
