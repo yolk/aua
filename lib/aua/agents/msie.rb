@@ -6,6 +6,9 @@ module Aua::Agents::Msie
 
   PATTERN = /(MSIE |Trident\/)([\d.]+)/
   TRIDENT_VERSION_MAP = {
+    "4.0" => "8.0",
+    "5.0" => "9.0",
+    "6.0" => "10.0",
     "7.0" => "11.0"
   }
 
