@@ -43,6 +43,10 @@ describe Aua do
 
     EXAMPLES = {
       # Firefox
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0" =>
+      { :type => :Browser, :name => :Firefox, :version => "94.0", :major_version => "94.0", :os_name => :MacOSX, :os_version => "10.15", :os_major_version => "10.15", :platform => :Macintosh },
+      "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0" =>
+        { :type => :Browser, :name => :Firefox, :version => "91.0", :major_version => "91.0", :os_name => :Windows, :os_version => "10", :os_major_version => "10", :platform => :Windows },
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:22.0) Gecko/20100101 Firefox/22.0" =>
         { :type => :Browser, :name => :Firefox, :version => "22.0", :major_version => "22.0", :os_name => :MacOSX, :os_version => "10.8", :os_major_version => "10.8", :platform => :Macintosh },
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; de; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13" =>
@@ -220,13 +224,19 @@ describe Aua do
       "Opera/9.80 (Linux armv7l; Maemo; Opera Mobi/4; U; de) Presto/2.5.28 Version/10.1" =>
         { :type => :Browser, :name => :OperaMobile, :version => "10.1", :os_name => :Linux, :os_version => "Maemo", :platform => :X11 },
 
-      # MSIE
+      # Edge
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29" =>
+        { :type => :Browser, :name => :Edge, :version => "96.0.1054.29", :major_version => "96", :os_name => :Windows, :os_version => "10", :platform => :Windows },
+      "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36 EdgA/90.0.818.46" =>
+        { :type => :Browser, :name => :Edge, :version => "90.0.818.46", :major_version => "90", :os_name => :Android, :os_version => "6.0", :platform => :Android },
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240" =>
-        { :type => :Browser, :name => :MSIE, :version => "12", :os_name => :Windows, :os_version => "10", :platform => :Windows },
+        { :type => :Browser, :name => :Edge, :version => "12.10240", :major_version => "12", :os_name => :Windows, :os_version => "10", :platform => :Windows },
       "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0" =>
-        { :type => :Browser, :name => :MSIE, :version => "12", :os_name => :Windows, :os_version => "10", :platform => :Windows },
+        { :type => :Browser, :name => :Edge, :version => "12.0", :major_version => "12", :os_name => :Windows, :os_version => "10", :platform => :Windows },
       "Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0" =>
-        { :type => :Browser, :name => :MSIE, :version => "12", :os_name => :WindowsPhone, :os_version => "10", :platform => :Windows },
+        { :type => :Browser, :name => :Edge, :version => "12.0", :major_version => "12", :os_name => :WindowsPhone, :os_version => "10", :platform => :Windows },
+
+      # MSIE
       "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv 11.0) like Gecko" =>
         { :type => :Browser, :name => :MSIE, :version => "11.0", :os_name => :Windows, :os_version => "8.1", :platform => :Windows },
       "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)" =>
@@ -282,11 +292,11 @@ describe Aua do
 
       # Android
       "Mozilla/5.0 (Linux; U; Android 1.1; en-gb; dream) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2" =>
-        { :type => :Browser, :name => :AndroidWebkit, :version => "3.0.4", :os_name => :Android, :os_version => "1.1", :platform => :Android },
+        { :type => :Browser, :name => :MobileSafari, :version => "3.0.4", :os_name => :Android, :os_version => "1.1", :platform => :Android },
       "Mozilla/5.0 (Linux; U; Android 0.5; en-us) AppleWebKit/522+ (KHTML, like Gecko) Safari/419.3" =>
-        { :type => :Browser, :name => :AndroidWebkit, :version => nil, :os_name => :Android, :os_version => "0.5", :platform => :Android },
+        { :type => :Browser, :name => :Safari, :version => "2.0.4", :os_name => :Android, :os_version => "0.5", :platform => :Android },
       "Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17" =>
-        { :type => :Browser, :name => :AndroidWebkit, :version => "4.0", :os_name => :Android, :os_version => "2.1", :platform => :Android },
+        { :type => :Browser, :name => :MobileSafari, :version => "4.0", :os_name => :Android, :os_version => "2.1", :platform => :Android },
 
       # Palm (Pre)
       "Mozilla/5.0 (webOS/1.3; U; en-US) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/1.0 Safari/525.27.1 Desktop/1.0" =>

@@ -1,7 +1,7 @@
 module Aua::OperatingSystems::Android
 
   def self.extend?(agent)
-    agent.platform_string == "Linux" && agent.comments.first && agent.comments.first[2] && agent.comments.first[2].match(PATTERN)
+    agent.platform_string == "Linux" && agent.comments.first && agent.comments.first.any?{|c| c.match(PATTERN) }
   end
 
   PATTERN = /^Android\s([\d\.]+)$/
@@ -15,14 +15,14 @@ module Aua::OperatingSystems::Android
   end
 
   def os_version
-    @os_version ||= comments.first[2] =~ PATTERN && $1
+    @os_version ||= comments.first.any?{|c| c.match(PATTERN) } && $1
   end
 
   def name
-    @name ||= :AndroidWebkit
+    @name ||= super || :AndroidWebkit
   end
 
   def version
-    @version ||= version_of("Version")
+    @version ||= super || version_of("Version")
   end
 end

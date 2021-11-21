@@ -1,6 +1,6 @@
 module Aua::Agents::Chrome
   def self.extend?(agent)
-    agent.products.include?("Safari") && agent.products.include?("Chrome") && !agent.products.include?("Edge")
+    agent.products.include?("Safari") && agent.products.include?("Chrome")
   end
 
   def type
